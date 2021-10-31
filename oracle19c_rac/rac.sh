@@ -59,7 +59,7 @@ mkdir -p /opt/oracle/app/oracle/product/19c/dbhome_1
 chown -R oracle:oinstall /opt/oracle/app/oracle
 chmod -R 775 /opt/oracle
 
-# grid env config both nodes
+# grid env config both nodes,ndoe1 ORACLE_SID is +ASM1,node2 ORACLE_SID is +ASM2
 cat >> /home/grid/.bash_profile << EOF
 umask 022
 export ORACLE_SID=+ASM1
@@ -73,7 +73,7 @@ EOF
 su - grid
 env |grep ORACLE
 
-# oracle env config both nodes
+# oracle env config both nodes,ndoe1 ORACLE_SID is oracledb1,node2 ORACLE_SID is oracledb2
 cat >> /home/oracle/.bash_profile << EOF
 umask 022
 export ORACLE_BASE=/opt/oracle/app/oracle
